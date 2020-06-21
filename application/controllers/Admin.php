@@ -7,7 +7,6 @@ class Admin extends CI_Controller
         parent::__construct();
         $this->load->model(['ModelBuku', 'ModelUser', 'ModelBooking']);
         cek_login();
-        cek_user();
     }
 
     public function index()
@@ -15,7 +14,7 @@ class Admin extends CI_Controller
         $data['judul'] = 'Dashboard';
         $data['user'] = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])->row_array();
         $data['anggota'] = $this->ModelUser->getUserLimit()->result_array();
-        $data['buku'] = $this->ModelBuku->getLimitBuku()->result_array();
+        $data['buku'] = $this->ModelBuku->getBuku()->result_array();
 
         //mengupdate stok dan dibooking pada tabel buku
         $detail = $this->db->query("SELECT*FROM booking,booking_detail WHERE DAY(curdate()) < DAY(batas_ambil) AND booking.id_booking=booking_detail.id_booking")->result_array();

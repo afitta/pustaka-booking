@@ -23,34 +23,29 @@ h3
 font-family:Verdana;
  }
 </style>
-<h3><center>Laporan Data Buku Perputakaan Online</center></h3>
+<h3><center>Laporan Data Member Perputakaan Online</center></h3>
 <br/>
 <table class="table-data">
 	<thead>
 		<tr>
 			<th>No</th>
-			<th>Judul Buku</th>
-			<th>Pengarang</th>
-			<th>Terbit</th>
-			<th>Tahun Penerbit</th>
-			<th>ISBN</th>
-			<th>Stok</th>
+			<th>Nama</th>
+			<th>Email</th>
+			<th>Member Sejak</th>
 		</tr>
 	</thead>
 	<tbody>
 		<?php
-		$no = 1;
-		foreach($buku as $b)
+		$i = 1;
+		foreach ($anggota as $a)
 		{
 			?>
-			<tr>
-				<th scope="row"><?= $no++; ?></th>
-				<td><?= $b['judul_buku']; ?></td>
-				<td><?= $b['pengarang']; ?></td>
-				<td><?= $b['penerbit']; ?></td>
-				<td><?= $b['tahun_terbit']; ?></td>
-				<td><?= $b['isbn']; ?></td>
-				<td><?= $b['stok']; ?></td>
+				<tr>
+						<th scope="row"><?= $i++; ?></th>
+						<td><?= $a['nama']; ?></td>
+						<td><?= $a['email']; ?></td>
+						<td><?= date('d F Y', $a['tanggal_input']); ?></td>
+						<td></td>
 			</tr>
 			<?php
 		}

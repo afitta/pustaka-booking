@@ -35,7 +35,8 @@ class Home extends CI_Controller
 				$data['user'] = "Pengunjung";
 				$data['title'] = "Detail Buku";
 
-				foreach ($buku as $fields) {
+				foreach ($buku as $fields)
+				{
 				$data['judul'] = $fields->judul_buku;
 				$data['pengarang'] = $fields->pengarang;
 				$data['penerbit'] = $fields->penerbit;

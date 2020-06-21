@@ -20,7 +20,7 @@ class Member extends CI_Controller
 	if ($user)
 {
 	//jika user sudah aktif
-	if ($user['is_active'] == 1)
+	if ($user['is_active'] == 1 && $user['role_id'] != 1)
 {
 	//cek password
 	if (password_verify($password, $user['password']))
@@ -40,7 +40,7 @@ else
 }
 else
 {
-	$this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-message" role="alert">User belum diaktifasi!!</div>');
+	$this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-message" role="alert">User belum diaktifasi atau tidak ada hak akses!!</div>');
 	redirect('home');
 }
 }
