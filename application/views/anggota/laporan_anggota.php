@@ -32,8 +32,6 @@
 								<td><?= $a['nama']; ?></td>
 								<td><?= $a['email']; ?></td>
 								<td><?= date('d F Y', $a['tanggal_input']); ?></td>
-								<td></td>
-
 				</tr>
 				<?php } ?>
 				</tbody>

@@ -39,7 +39,7 @@ class Autentifikasi extends CI_Controller
         //jika usernya ada
         if ($user) {
             //jika user sudah aktif
-            if ($user['is_active'] == 1 && $user ['role_id'] == 1) {
+            if ($user['is_active'] == 1) {
                 //cek password
                 if (password_verify($password, $user['password'])) {
                     $data = [

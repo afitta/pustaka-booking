@@ -6,7 +6,7 @@
     header ("Content-Disposition: attachment; filename=Nama_File.xls");
 ?>
 
-<h3><center>Laporan Data Anggota Perputakaan Online</center></h3>
+<h3><center>Laporan Data Anggota Online</center></h3>
 <br/>
 <table class="table-data">
 	<thead>
@@ -18,17 +18,14 @@
 		</tr>
 	</thead>
 	<tbody>
-		<?php
-		$no = 1;
-		foreach($user as $u)
-		{
-			?>
-			<tr>
-				<th scope="row"><?= $no++; ?></th>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td> 
+    <?php
+    $i = 1;
+    foreach ($anggota as $a) { ?>
+        <tr>
+            <th scope="row"><?= $i++; ?></th>
+            <td><?= $a['nama']; ?></td>
+            <td><?= $a['email']; ?></td>
+            <td><?= date('d F Y', $a['tanggal_input']); ?></td>
 			</tr>
 			<?php
 		}

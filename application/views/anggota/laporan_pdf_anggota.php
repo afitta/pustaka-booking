@@ -23,7 +23,7 @@ h3
 font-family:Verdana;
  }
 </style>
-<h3><center>Laporan Data Member Perputakaan Online</center></h3>
+<h3><center>Laporan Data Anggota Perputakaan Online</center></h3>
 <br/>
 <table class="table-data">
 	<thead>
@@ -45,7 +45,6 @@ font-family:Verdana;
 						<td><?= $a['nama']; ?></td>
 						<td><?= $a['email']; ?></td>
 						<td><?= date('d F Y', $a['tanggal_input']); ?></td>
-						<td></td>
 			</tr>
 			<?php
 		}
